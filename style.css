@@ -105,6 +105,10 @@ p { margin: 0 0 1rem; }
   letter-spacing: -0.03em;
 }
 .masthead .lede { max-width: 30ch; }
+.masthead .id { display: flex; align-items: center; gap: 1.25rem; }
+
+.portrait { display: block; flex: none; width: 96px; height: 96px; object-fit: cover; }
+.portrait-lg { width: 160px; height: 160px; margin-top: 1.25rem; }
 
 .proof-line {
   margin: 0;
@@ -264,4 +268,16 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
   .btn { width: 100%; text-align: center; }
   .metrics li { grid-template-columns: 1fr; }
   ol.numbered > li { grid-template-columns: 2.25rem 1fr; }
+}
+
+/* Desktop: tighter vertical rhythm, same 680px column */
+
+@media (min-width: 721px) {
+  .masthead { padding: 1.5rem 0 1.2rem; }
+  .masthead .id { gap: 1.5rem; }
+  .page-head { padding: 1.5rem 0 1.2rem; }
+  .section { padding: 1.5rem 0; }
+  ol.numbered > li { padding: 1.35rem 0; }
+  ol.numbered > li:first-child { padding-top: 1.5rem; }
+  ol.numbered > li:last-child { padding-bottom: 1.5rem; }
 }

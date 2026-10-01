@@ -11,6 +11,7 @@ Pages: `index.html`, `guide.html`, `products.html`, `work.html`, `about.html`, p
 - Checkout: `https://example.com/checkout-placeholder` in `products.html` (two buttons).
 - Proof, quotes, credentials: everything in `[brackets]` in `products.html`, `work.html`, `about.html`.
 - Guide file: replace `assets/guide.pdf`.
+- Photo: replace `assets/satya.jpg` (square, 480px). Used at 96px on the home page and 160px on the about page.
 
 ## Forms
 
