@@ -149,6 +149,7 @@ ol.numbered > li {
   padding: 2.25rem 0;
   border-top: 1px solid var(--rule);
 }
+ol.numbered > li > div { min-width: 0; }
 ol.numbered > li:first-child { border-top: 0; padding-top: 2.5rem; }
 ol.numbered > li:last-child { padding-bottom: 2.5rem; }
 
@@ -216,8 +217,9 @@ select {
 }
 textarea { min-height: 8rem; resize: vertical; }
 
-.email-form .row { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-.email-form input[type="email"] { width: 100%; }
+.beehiiv-embed { width: 100%; max-width: 100%; min-width: 0; overflow: hidden; }
+.beehiiv-embed > :not(script),
+.beehiiv-embed iframe { display: block; width: 100%; max-width: 100% !important; margin: 0; padding: 0; border: 0; background: transparent; box-shadow: none; }
 
 .field { margin-bottom: 1.25rem; }
 
@@ -265,7 +267,6 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
 .footer a:hover { color: var(--ink); }
 
 @media (max-width: 520px) {
-  .email-form .btn { width: 100%; }
   .btn { width: 100%; text-align: center; }
   .metrics li { grid-template-columns: 1fr; }
   ol.numbered > li { grid-template-columns: 2.25rem 1fr; }

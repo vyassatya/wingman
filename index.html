@@ -46,16 +46,10 @@
           <li>Where revenue leaks in a business that is already working.</li>
           <li>A one-page fix order, so you stop doing everything at once.</li>
         </ul>
-        <!-- Swap action for your Beehiiv form endpoint. Remove data-netlify attributes if you do. -->
-        <form class="email-form" name="guide-home" method="post" action="thanks.html?from=guide" data-netlify="true" data-netlify-honeypot="bot-field">
-          <p class="hp" hidden><label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-          <label for="email-home">Email address</label>
-          <div class="row">
-            <input type="email" id="email-home" name="email" required autocomplete="email" placeholder="you@yourcompany.com">
-            <button class="btn" type="submit">Send me the guide</button>
-          </div>
-          <p class="fine">The guide lands in your inbox in a minute. Unsubscribe any time.</p>
-        </form>
+        <div class="beehiiv-embed">
+          <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="c59cd420-21fc-4338-82b8-8e6c7f836334"></script>
+        </div>
+        <p class="fine">The guide lands in your inbox in a minute. Unsubscribe any time.</p>
       </div>
     </li>
 

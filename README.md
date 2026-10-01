@@ -15,6 +15,6 @@ Pages: `index.html`, `guide.html`, `products.html`, `work.html`, `about.html`, p
 
 ## Forms
 
-All three forms (`index.html`, `guide.html`, `work.html`) are Netlify Forms: on a Netlify deploy, submissions land in the Netlify dashboard and redirect to `thanks.html`.
+`index.html` and `guide.html` use the Beehiiv embed (form id `c59cd420-21fc-4338-82b8-8e6c7f836334`). Card, border and background styling for that form is set in the Beehiiv form designer, not here.
 
-To use Beehiiv for the email forms, replace `action` with the Beehiiv endpoint and remove `data-netlify` and `data-netlify-honeypot` from that form. `thanks.html?from=guide` shows the guide message; `?from=apply` shows the application message.
+`work.html` is a Netlify Form: on a Netlify deploy, submissions land in the Netlify dashboard and redirect to `thanks.html?from=apply`. If you host elsewhere (Vercel), replace its `action` and remove the `data-netlify` attributes.
