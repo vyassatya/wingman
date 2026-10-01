@@ -7,9 +7,8 @@ Pages: `index.html`, `guide.html`, `products.html`, `work.html`, `about.html`, p
 ## Swap before launch
 
 - Name, Instagram handle (`iamsatyavyas`): search all `.html` files.
-- Price: every `$[price]` in `index.html` and `products.html`.
-- Checkout: `https://example.com/checkout-placeholder` in `products.html` (two buttons).
-- Proof, quotes, credentials: everything in `[brackets]` in `products.html`, `work.html`, `about.html`.
+- Checkout: `https://example.com/reset` in `products.html` (two buttons). Swap for your Razorpay link.
+- Proof line: edit in `index.html`, `products.html`, `work.html`.
 - Guide file: replace `assets/guide.pdf`.
 - Photo: replace `assets/satya.jpg` (square, 480px). Used at 96px on the home page and 160px on the about page.
 
