@@ -29,6 +29,8 @@ body {
   padding: 0 24px;
 }
 
+.col-wide { max-width: 1040px; }
+
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
 a:hover { text-decoration-thickness: 2px; }
 
@@ -291,4 +293,43 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
   ol.numbered > li { padding: 1.35rem 0; }
   ol.numbered > li:first-child { padding-top: 1.5rem; }
   ol.numbered > li:last-child { padding-bottom: 1.5rem; }
+}
+
+/* Home: single call to action */
+
+.cta-row { padding: 2rem 0 2.5rem; }
+.cta-row p { margin: 0; }
+.cta-row .textlink { margin-top: 1rem; }
+
+/* Work: pricing table (Save, Launchpad, Scale) */
+
+.work-intro { max-width: 40rem; }
+.section.narrow { max-width: 680px; }
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto auto auto;
+  column-gap: 1rem;
+  margin: 2rem 0 2.5rem;
+}
+.plan {
+  display: grid;
+  grid-row: 1 / span 5;
+  grid-template-rows: subgrid;
+  border: 2px solid var(--rule);
+  padding: 0 1.25rem;
+}
+.plan.featured { border-color: var(--accent); }
+.plan > * { margin: 0; padding: 1.1rem 0; border-top: 1px solid var(--rule); }
+.plan > h2 { border-top: 0; font-size: 1.6rem; }
+.plan p { margin: 0; }
+.plan p + p { margin-top: 0.25rem; }
+.plan .eyebrow { margin-bottom: 0.4rem; }
+.plan-price { font-family: var(--serif); font-size: 1.75rem; font-weight: 600; line-height: 1.2; }
+.plan .btn { display: block; text-align: center; }
+
+@media (max-width: 899px) {
+  .plans { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 1rem; }
+  .plan { grid-row: auto; display: block; grid-template-rows: none; }
 }
