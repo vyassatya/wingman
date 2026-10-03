@@ -177,6 +177,7 @@ ol.numbered.tight .num { font-size: 1.15rem; line-height: 1.65; }
 ol.numbered.tight h3 { font-size: 1.1rem; line-height: 1.5; margin-bottom: 0.15rem; }
 ol.numbered.tight p { margin: 0; color: var(--mute); }
 ol.numbered.tight > li:first-child { border-top: 0; }
+.section > ol.numbered.tight { margin-bottom: 1.25rem; }
 
 .offer h2 { margin-bottom: 1rem; }
 .offer .price-line { font-family: var(--serif); font-size: 1.25rem; margin: 0 0 1.25rem; }
@@ -204,6 +205,7 @@ label { display: block; margin-bottom: 0.35rem; font-size: 0.875rem; font-weight
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
 select,
 textarea {
   width: 100%;

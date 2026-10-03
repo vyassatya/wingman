@@ -2,7 +2,7 @@
 
 Plain HTML and one stylesheet. Open `index.html` locally, or drag this folder onto Netlify.
 
-Pages: `index.html`, `guide.html`, `products.html`, `work.html`, `about.html`, plus `thanks.html` (form destination).
+Pages: `index.html`, `guide.html`, `work.html`, `about.html`, plus `thanks.html` (form destination). `products.html` (the Reset) is kept but not linked from the nav or the home page.
 
 ## Swap before launch
 

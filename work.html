@@ -13,7 +13,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work with Satya Vyas</title>
-<meta name="description" content="Done-with-you, 90 days. Application only. For founders whose business has stalled or is running out of cash.">
+<meta name="description" content="Three ways to work together: Launchpad, Scale and Save.">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -25,7 +25,6 @@
     <a href="index.html">Home</a>
     <a href="guide.html">Guide</a>
     <a href="work.html" aria-current="page">Work</a>
-    <a href="products.html">Products</a>
     <a href="about.html">About</a>
   </nav>
 </header>
@@ -33,29 +32,53 @@
 <main id="main" class="col">
 
   <section class="page-head">
-    <p class="eyebrow">Application only &middot; 3 founders per quarter</p>
-    <h1>Fix the constraint in 90 days.</h1>
-    <p class="lede">A done-with-you engagement for founders whose business has stalled, stretched thin, or started burning cash.</p>
+    <h1>Work with me</h1>
+    <p class="lede">Three rungs. Pick the one that fits where your business is.</p>
   </section>
 
   <section class="section">
-    <h2>This is for you if</h2>
-    <ul class="dash">
-      <li>Founders doing ₹2Cr to ₹20Cr a year who are the bottleneck.</li>
-    </ul>
+    <h2>Proof</h2>
+    <p>IIT Roorkee. Founded three companies, sold one. Two reached ₹50Cr ARR. Raised ₹30Cr. Angel in 24 companies.</p>
   </section>
 
-  <section class="section">
-    <h2>This is not for you if</h2>
-    <ul class="dash">
-      <li>Pre-revenue.</li>
-      <li>Under ₹2Cr a year.</li>
-      <li>Anyone who will not share real numbers.</li>
-    </ul>
+  <section class="section" id="launchpad">
+    <h2>Launchpad</h2>
+    <p>For founders getting a live business off the ground.</p>
+    <p><strong>₹50,000 a month.</strong></p>
+    <p><strong>Not for:</strong> pre-revenue.</p>
+    <form name="launchpad" method="post" action="thanks.html?from=apply" data-netlify="true" data-netlify-honeypot="bot-field">
+      <p class="hp" hidden><label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="field">
+        <label for="lp-name">Name</label>
+        <input type="text" id="lp-name" name="name" required autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="lp-email">Email</label>
+        <input type="email" id="lp-email" name="email" required autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="lp-business">Business name and website</label>
+        <input type="text" id="lp-business" name="business" required autocomplete="organization">
+      </div>
+
+      <div class="field">
+        <label for="lp-revenue">Monthly revenue</label>
+        <input type="text" id="lp-revenue" name="monthly_revenue" required>
+      </div>
+
+      <button class="btn" type="submit">Apply for Launchpad</button>
+    </form>
   </section>
 
-  <section class="section">
-    <h2>What you get</h2>
+  <section class="section" id="scale">
+    <h2>Scale</h2>
+    <p>For founders doing ₹2Cr to ₹20Cr who are the bottleneck.</p>
+    <p><strong>₹6.5 lakh.</strong> Application only.</p>
+    <p><strong>Not for:</strong> under ₹2Cr, or anyone who will not share numbers.</p>
+    <p><strong>What you get</strong></p>
     <ul class="dash">
       <li>A 90-day plan built on your numbers, not a template.</li>
       <li>A weekly 60-minute working session with me.</li>
@@ -65,15 +88,7 @@
       <li>Scripts and templates for every hard conversation along the way.</li>
     </ul>
     <p><strong>Guarantee.</strong> If we do not hit the 90-day target, I keep working with you at no charge until we do.</p>
-  </section>
-
-  <section class="section">
-    <h2>Proof</h2>
-    <p>IIT Roorkee. Founded three companies, sold one. Two reached ₹50Cr ARR. Raised ₹30Cr. Angel in 24 companies.</p>
-  </section>
-
-  <section class="section">
-    <h2>How it works</h2>
+    <p><strong>How it works</strong></p>
     <ol class="numbered tight">
       <li>
         <span class="num" aria-hidden="true">01</span>
@@ -88,12 +103,7 @@
         <div><h3>We scope it and start</h3><p>If it is a fit, we talk for 30 minutes, agree the target, and begin the following Monday.</p></div>
       </li>
     </ol>
-  </section>
-
-  <section class="section" id="apply">
-    <h2>Apply</h2>
-    <p><strong>₹3.5 lakh.</strong> Application only. Three founders a quarter.</p>
-    <!-- Netlify captures submissions on deploy. Or swap action for another form endpoint. -->
+    <p><strong>Apply for Scale</strong></p>
     <form name="apply" method="post" action="thanks.html?from=apply" data-netlify="true" data-netlify-honeypot="bot-field">
       <p class="hp" hidden><label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
@@ -131,6 +141,39 @@
 
       <button class="btn" type="submit">Apply to work together</button>
       <p class="fine">I read every application myself.</p>
+    </form>
+  </section>
+
+  <section class="section" id="save">
+    <h2>Save</h2>
+    <p>For founders who are stuck and not sure which rung. One diagnostic call.</p>
+    <p><strong>₹9,500.</strong></p>
+    <p><strong>Not a coaching retainer.</strong> It is one call, then you are placed into Launchpad or Scale.</p>
+    <form name="save" method="post" action="thanks.html?from=save" data-netlify="true" data-netlify-honeypot="bot-field">
+      <p class="hp" hidden><label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="field">
+        <label for="sv-name">Name</label>
+        <input type="text" id="sv-name" name="name" required autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="sv-email">Email</label>
+        <input type="email" id="sv-email" name="email" required autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="sv-phone">Phone</label>
+        <input type="tel" id="sv-phone" name="phone" required autocomplete="tel">
+      </div>
+
+      <div class="field">
+        <label for="sv-stuck">What is stuck?</label>
+        <textarea id="sv-stuck" name="stuck" required></textarea>
+      </div>
+
+      <button class="btn" type="submit">Book the ₹9,500 call</button>
+      <p class="fine">No payment is taken on this page.</p>
     </form>
   </section>
 

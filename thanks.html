@@ -25,7 +25,6 @@
     <a href="index.html">Home</a>
     <a href="guide.html">Guide</a>
     <a href="work.html">Work</a>
-    <a href="products.html">Products</a>
     <a href="about.html">About</a>
   </nav>
 </header>
@@ -48,6 +47,10 @@
     <p>You can also <a href="assets/guide.pdf" download>download it now</a>.</p>
   </section>
 
+  <section class="section" id="t-save" hidden>
+    <p>Request received. I will contact you to schedule the call. No payment was taken.</p>
+  </section>
+
   <section class="section" id="t-apply" hidden>
     <p>Your application is in. I read every one myself and reply within three business days, yes or no.</p>
     <p>If it is a yes, you will get a link to book a 30-minute call.</p>
@@ -65,7 +68,7 @@
 <script>
   var from = new URLSearchParams(location.search).get("from");
   var show = document.getElementById("t-" + from);
-  if (show && (from === "guide" || from === "apply")) {
+  if (show && (from === "guide" || from === "apply" || from === "save")) {
     document.getElementById("t-generic").hidden = true;
     show.hidden = false;
   }
