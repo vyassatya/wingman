@@ -13,7 +13,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work with Satya Vyas</title>
-<meta name="description" content="Three ways to work together: Launchpad, Scale and Save.">
+<meta name="description" content="Talk to me or work with me: Business Second Opinion, Business Blueprint, Wingman Launchpad, SOS Sprint and Wingman Scale.">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -22,9 +22,9 @@
 
 <header class="col col-wide">
   <nav class="nav" aria-label="Main">
-    <a href="index.html">Home</a>
+    <a href="work.html#talk">Talk to Me</a>
+    <a href="work.html#work">Work With Me</a>
     <a href="guide.html">Guide</a>
-    <a href="work.html" aria-current="page">Work</a>
     <a href="about.html">About</a>
   </nav>
 </header>
@@ -40,162 +40,83 @@
 
   <p class="proof-line">IIT Roorkee. Founded three companies, sold one. Two reached ₹50Cr ARR. Raised ₹30Cr. Angel in 24 companies.</p>
 
-  <p class="lede work-intro">Three ways to work together. Pick the one that matches the business you have now.</p>
+  <p class="lede work-intro">Two ways in. A conversation, or a build.</p>
 
-  <div class="plans">
+  <section class="section" id="talk">
+    <h2>Talk to Me</h2>
+    <p>Pressure-test a decision before you hire anyone.</p>
+    <div class="plans plans-2">
+      <div class="plan">
+        <h3>Business Second Opinion</h3>
+        <div>
+          <p class="eyebrow">What it is</p>
+          <p>30-minute call to pressure-test one important business decision.</p>
+        </div>
+        <div>
+          <p class="eyebrow">Price</p>
+          <p class="plan-price">₹9,500</p>
+        </div>
+        <div><a class="btn" href="apply.html?plan=second-opinion" aria-label="Book this: Business Second Opinion">Book this</a></div>
+      </div>
 
-    <div class="plan">
-      <h2>Save</h2>
-      <div>
-        <p class="eyebrow">Who it is for</p>
-        <p>For founders who are stuck and not sure which rung.</p>
+      <div class="plan featured">
+        <h3>Business Blueprint</h3>
+        <div>
+          <p class="eyebrow">What it is</p>
+          <p>75-minute working session, a written action plan, and 7 days of clarification support.</p>
+        </div>
+        <div>
+          <p class="eyebrow">Price</p>
+          <p class="plan-price">₹19,500</p>
+        </div>
+        <div><a class="btn" href="apply.html?plan=blueprint" aria-label="Book this: Business Blueprint">Book this</a></div>
       </div>
-      <div>
-        <p class="eyebrow">Price</p>
-        <p class="plan-price">₹9,500</p>
-      </div>
-      <div>
-        <p class="eyebrow">Commitment</p>
-        <p>One diagnostic call, then you are placed. Not a retainer.</p>
-      </div>
-      <div><a class="btn" href="#save">Book the ₹9,500 call</a></div>
     </div>
-
-    <div class="plan featured">
-      <h2>Launchpad</h2>
-      <div>
-        <p class="eyebrow">Who it is for</p>
-        <p>For founders getting a live business off the ground. Not for pre-revenue.</p>
-      </div>
-      <div>
-        <p class="eyebrow">Price</p>
-        <p class="plan-price">₹50,000 a month</p>
-      </div>
-      <div>
-        <p class="eyebrow">Commitment</p>
-        <p>Monthly.</p>
-      </div>
-      <div><a class="btn" href="#launchpad">Apply for Launchpad</a></div>
-    </div>
-
-    <div class="plan">
-      <h2>Scale</h2>
-      <div>
-        <p class="eyebrow">Who it is for</p>
-        <p>For founders doing ₹2Cr to ₹20Cr who are the bottleneck. Not for under ₹2Cr, and not if you will not share numbers.</p>
-      </div>
-      <div>
-        <p class="eyebrow">Price</p>
-        <p class="plan-price">₹6.5 lakh</p>
-      </div>
-      <div>
-        <p class="eyebrow">Commitment</p>
-        <p>Application only. Three founders a quarter.</p>
-      </div>
-      <div><a class="btn" href="#scale">Apply for Scale</a></div>
-    </div>
-
-  </div>
-
-  <section class="section narrow" id="save">
-    <h2>Save</h2>
-    <form name="save" method="post" action="thanks.html?from=save" data-netlify="true" data-netlify-honeypot="bot-field">
-      <p class="hp" hidden><label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-
-      <div class="field">
-        <label for="sv-name">Name</label>
-        <input type="text" id="sv-name" name="name" required autocomplete="name">
-      </div>
-
-      <div class="field">
-        <label for="sv-email">Email</label>
-        <input type="email" id="sv-email" name="email" required autocomplete="email">
-      </div>
-
-      <div class="field">
-        <label for="sv-phone">Phone</label>
-        <input type="tel" id="sv-phone" name="phone" required autocomplete="tel">
-      </div>
-
-      <div class="field">
-        <label for="sv-stuck">What is stuck?</label>
-        <textarea id="sv-stuck" name="stuck" required></textarea>
-      </div>
-
-      <button class="btn" type="submit">Book the ₹9,500 call</button>
-      <p class="fine">No payment is taken on this page.</p>
-    </form>
   </section>
 
-  <section class="section narrow" id="launchpad">
-    <h2>Launchpad</h2>
-    <form name="launchpad" method="post" action="thanks.html?from=apply" data-netlify="true" data-netlify-honeypot="bot-field">
-      <p class="hp" hidden><label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-
-      <div class="field">
-        <label for="lp-name">Name</label>
-        <input type="text" id="lp-name" name="name" required autocomplete="name">
+  <section class="section" id="work">
+    <h2>Work With Me</h2>
+    <p>A fixed engagement. You are in the business, not on a call.</p>
+    <div class="plans plans-3">
+      <div class="plan">
+        <h3>Wingman Launchpad</h3>
+        <div>
+          <p class="eyebrow">What it is</p>
+          <p>Fixed 45-day engagement to take a pre-revenue business from idea or validation to launch-ready.</p>
+        </div>
+        <div>
+          <p class="eyebrow">Price</p>
+          <p class="plan-price">Starting ₹50,000</p>
+        </div>
+        <div><a class="btn" href="apply.html?plan=launchpad" aria-label="Apply: Wingman Launchpad">Apply</a></div>
       </div>
 
-      <div class="field">
-        <label for="lp-email">Email</label>
-        <input type="email" id="lp-email" name="email" required autocomplete="email">
+      <div class="plan">
+        <h3>SOS Sprint</h3>
+        <div>
+          <p class="eyebrow">What it is</p>
+          <p>30-day engagement for an existing business with a specific growth, operations, profitability, systems, or founder-dependency problem.</p>
+        </div>
+        <div>
+          <p class="eyebrow">Price</p>
+          <p class="plan-price">Starting ₹1.5 lakh</p>
+        </div>
+        <div><a class="btn" href="apply.html?plan=sprint" aria-label="Apply: SOS Sprint">Apply</a></div>
       </div>
 
-      <div class="field">
-        <label for="lp-business">Business name and website</label>
-        <input type="text" id="lp-business" name="business" required autocomplete="organization">
+      <div class="plan featured">
+        <h3>Wingman Scale</h3>
+        <div>
+          <p class="eyebrow">What it is</p>
+          <p>90-day high-touch engagement for established businesses looking to materially grow, systemise, and scale.</p>
+        </div>
+        <div>
+          <p class="eyebrow">Price</p>
+          <p class="plan-price">Starting ₹6.5 lakh</p>
+        </div>
+        <div><a class="btn" href="apply.html?plan=scale" aria-label="Apply: Wingman Scale">Apply</a></div>
       </div>
-
-      <div class="field">
-        <label for="lp-revenue">Monthly revenue</label>
-        <input type="text" id="lp-revenue" name="monthly_revenue" required>
-      </div>
-
-      <button class="btn" type="submit">Apply for Launchpad</button>
-    </form>
-  </section>
-
-  <section class="section narrow" id="scale">
-    <h2>Scale</h2>
-    <form name="apply" method="post" action="thanks.html?from=apply" data-netlify="true" data-netlify-honeypot="bot-field">
-      <p class="hp" hidden><label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-
-      <div class="field">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required autocomplete="name">
-      </div>
-
-      <div class="field">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required autocomplete="email">
-      </div>
-
-      <div class="field">
-        <label for="business">Business name and website</label>
-        <input type="text" id="business" name="business" required autocomplete="organization">
-      </div>
-
-      <div class="field">
-        <label for="revenue">Annual revenue</label>
-        <select id="revenue" name="revenue" required>
-          <option value="" selected disabled>Select a range</option>
-          <option>Under ₹2Cr</option>
-          <option>₹2Cr to ₹5Cr</option>
-          <option>₹5Cr to ₹10Cr</option>
-          <option>₹10Cr to ₹20Cr</option>
-          <option>Over ₹20Cr</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="stuck">What is stuck?</label>
-        <textarea id="stuck" name="stuck" required></textarea>
-      </div>
-
-      <button class="btn" type="submit">Apply for Scale</button>
-      <p class="fine">I read every application myself.</p>
-    </form>
+    </div>
   </section>
 
 </main>

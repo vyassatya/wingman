@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-99ZQKRZ7DR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-99ZQKRZ7DR');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Apply</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="col">
+  <nav class="nav" aria-label="Main">
+    <a href="work.html#talk">Talk to Me</a>
+    <a href="work.html#work">Work With Me</a>
+    <a href="guide.html">Guide</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main id="main" class="col">
+
+  <section class="page-head" id="plan" hidden>
+    <h1 id="plan-name"></h1>
+    <p class="lede" id="plan-what"></p>
+    <p class="plan-price" id="plan-price"></p>
+  </section>
+
+  <section class="section" id="missing">
+    <h2>Choose a plan</h2>
+    <ul class="dash">
+      <li><a href="apply.html?plan=second-opinion">Business Second Opinion</a></li>
+      <li><a href="apply.html?plan=blueprint">Business Blueprint</a></li>
+      <li><a href="apply.html?plan=launchpad">Wingman Launchpad</a></li>
+      <li><a href="apply.html?plan=sprint">SOS Sprint</a></li>
+      <li><a href="apply.html?plan=scale">Wingman Scale</a></li>
+    </ul>
+  </section>
+
+  <section class="section" id="form-talk" hidden>
+    <form name="apply-talk" method="post" action="thanks.html" data-netlify="true" data-netlify-honeypot="bot-field">
+      <p class="hp" hidden><label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <input type="hidden" name="plan" value="">
+
+      <div class="field">
+        <label for="t-name">Name</label>
+        <input type="text" id="t-name" name="name" required autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="t-email">Email</label>
+        <input type="email" id="t-email" name="email" required autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="t-phone">Phone</label>
+        <input type="tel" id="t-phone" name="phone" required autocomplete="tel">
+      </div>
+
+      <div class="field">
+        <label for="t-decision">The decision</label>
+        <textarea id="t-decision" name="decision" required></textarea>
+      </div>
+
+      <button class="btn" type="submit">Book this</button>
+      <p class="fine">No payment is taken on this page.</p>
+    </form>
+  </section>
+
+  <section class="section" id="form-work" hidden>
+    <form name="apply-work" method="post" action="thanks.html" data-netlify="true" data-netlify-honeypot="bot-field">
+      <p class="hp" hidden><label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <input type="hidden" name="plan" value="">
+
+      <div class="field">
+        <label for="w-name">Name</label>
+        <input type="text" id="w-name" name="name" required autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="w-email">Email</label>
+        <input type="email" id="w-email" name="email" required autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="w-business">Business</label>
+        <input type="text" id="w-business" name="business" required autocomplete="organization">
+      </div>
+
+      <div class="field">
+        <label for="w-stage">Stage or revenue</label>
+        <input type="text" id="w-stage" name="stage_or_revenue" required>
+      </div>
+
+      <div class="field">
+        <label for="w-stuck">What is stuck?</label>
+        <textarea id="w-stuck" name="stuck" required></textarea>
+      </div>
+
+      <button class="btn" type="submit">Apply</button>
+      <p class="fine">No payment is taken on this page.</p>
+    </form>
+  </section>
+
+</main>
+
+<footer class="col">
+  <div class="footer">
+    <span>&copy; 2026 Satya Vyas</span>
+    <a href="https://www.instagram.com/iamsatyavyas" rel="noopener">Instagram</a>
+  </div>
+</footer>
+
+<script>
+  var PLANS = {
+    "second-opinion": { kind: "talk", name: "Business Second Opinion", what: "30-minute call to pressure-test one important business decision.", price: "\u20B99,500" },
+    "blueprint": { kind: "talk", name: "Business Blueprint", what: "75-minute working session, a written action plan, and 7 days of clarification support.", price: "\u20B919,500" },
+    "launchpad": { kind: "work", name: "Wingman Launchpad", what: "Fixed 45-day engagement to take a pre-revenue business from idea or validation to launch-ready.", price: "Starting \u20B950,000" },
+    "sprint": { kind: "work", name: "SOS Sprint", what: "30-day engagement for an existing business with a specific growth, operations, profitability, systems, or founder-dependency problem.", price: "Starting \u20B91.5 lakh" },
+    "scale": { kind: "work", name: "Wingman Scale", what: "90-day high-touch engagement for established businesses looking to materially grow, systemise, and scale.", price: "Starting \u20B96.5 lakh" }
+  };
+  var slug = new URLSearchParams(location.search).get("plan");
+  var plan = Object.prototype.hasOwnProperty.call(PLANS, slug) ? PLANS[slug] : null;
+  if (plan) {
+    document.title = "Apply: " + plan.name;
+    document.getElementById("plan-name").textContent = plan.name;
+    document.getElementById("plan-what").textContent = plan.what;
+    document.getElementById("plan-price").textContent = plan.price;
+    document.getElementById("plan").hidden = false;
+    document.getElementById("missing").hidden = true;
+    var section = document.getElementById("form-" + plan.kind);
+    var form = section.querySelector("form");
+    form.action = "thanks.html?plan=" + encodeURIComponent(slug);
+    form.querySelector('input[name="plan"]').value = slug;
+    section.hidden = false;
+  }
+</script>
+</body>
+</html>

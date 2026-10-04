@@ -303,26 +303,30 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
 
 /* Work: pricing table (Save, Launchpad, Scale) */
 
-.work-intro { max-width: 40rem; }
+.work-intro { max-width: 40rem; margin-bottom: 1.5rem; }
+.page-head .plan-price { margin: 1rem 0 0; }
 .section.narrow { max-width: 680px; }
 
 .plans {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: repeat(var(--cols, 3), 1fr);
+  grid-template-rows: auto auto auto auto;
   column-gap: 1rem;
   margin: 2rem 0 2.5rem;
 }
 .plan {
   display: grid;
-  grid-row: 1 / span 5;
+  grid-row: 1 / span 4;
   grid-template-rows: subgrid;
   border: 2px solid var(--rule);
   padding: 0 1.25rem;
 }
 .plan.featured { border-color: var(--accent); }
 .plan > * { margin: 0; padding: 1.1rem 0; border-top: 1px solid var(--rule); }
-.plan > h2 { border-top: 0; font-size: 1.6rem; }
+.plan > h3 { border-top: 0; font-size: 1.6rem; }
+.plans-2 { --cols: 2; }
+.plans-3 { --cols: 3; }
+.section .plans { margin: 1.5rem 0 0; }
 .plan p { margin: 0; }
 .plan p + p { margin-top: 0.25rem; }
 .plan .eyebrow { margin-bottom: 0.4rem; }
@@ -333,3 +337,14 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
   .plans { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 1rem; }
   .plan { grid-row: auto; display: block; grid-template-rows: none; }
 }
+
+/* Home: two buttons, secondary is an outline */
+
+.cta-row .buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.btn-outline {
+  padding: calc(0.85rem - 2px) calc(1.5rem - 2px);
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+}
+.btn-outline:hover { background: transparent; border-color: var(--accent-dark); color: var(--accent-dark); }

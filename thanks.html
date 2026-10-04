@@ -22,9 +22,9 @@
 
 <header class="col">
   <nav class="nav" aria-label="Main">
-    <a href="index.html">Home</a>
+    <a href="work.html#talk">Talk to Me</a>
+    <a href="work.html#work">Work With Me</a>
     <a href="guide.html">Guide</a>
-    <a href="work.html">Work</a>
     <a href="about.html">About</a>
   </nav>
 </header>
@@ -48,7 +48,7 @@
   </section>
 
   <section class="section" id="t-save" hidden>
-    <p>Request received. I will contact you to schedule the call. No payment was taken.</p>
+    <p>Request received. I will contact you to schedule it. No payment was taken.</p>
   </section>
 
   <section class="section" id="t-apply" hidden>
@@ -66,9 +66,13 @@
 </footer>
 
 <script>
-  var from = new URLSearchParams(location.search).get("from");
-  var show = document.getElementById("t-" + from);
-  if (show && (from === "guide" || from === "apply" || from === "save")) {
+  var q = new URLSearchParams(location.search);
+  var key = q.get("from");
+  var plan = q.get("plan");
+  if (plan === "second-opinion" || plan === "blueprint") key = "save";
+  if (plan === "launchpad" || plan === "sprint" || plan === "scale") key = "apply";
+  var show = document.getElementById("t-" + key);
+  if (show && (key === "guide" || key === "apply" || key === "save")) {
     document.getElementById("t-generic").hidden = true;
     show.hidden = false;
   }
