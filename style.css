@@ -348,3 +348,8 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
   color: var(--accent);
 }
 .btn-outline:hover { background: transparent; border-color: var(--accent-dark); color: var(--accent-dark); }
+
+/* Photo and name link home */
+
+.masthead a.id, .masthead a.id:hover { text-decoration: none; color: inherit; }
+.portrait-link { display: block; width: fit-content; }
