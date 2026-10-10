@@ -18,3 +18,7 @@ Pages: `index.html`, `guides.html`, `work.html` (pricing), `apply.html?plan=SLUG
 
 `work.html` is a Netlify Form: on a Netlify deploy, submissions land in the Netlify dashboard and redirect to `thanks.html?from=apply`. If you host elsewhere (Vercel), replace its `action` and remove the `data-netlify` attributes.
 - Homepage photo: `assets/satya-cutout.webp` (transparent cutout). Free-guide covers: `assets/guides/1.png` to `4.png`.
+
+## Guides library
+
+`guides.html` lists the guide pages in `guides/*.html`. Each page is built from a PDF in `guides/` (text from the PDF, cover from page 1 saved to `assets/guides/<slug>.png`). The text is public; the "Get the PDF" block is the Beehiiv embed.

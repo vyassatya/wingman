@@ -413,3 +413,32 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
   .guides-grid { grid-template-columns: 1fr; padding-top: 2rem; padding-bottom: 2.5rem; }
   .fan { --w: 95px; }
 }
+
+/* Guides library */
+
+.guide-list { list-style: none; margin: 0; padding: 0; }
+.guide-list li { padding: 1.5rem 0; border-top: 1px solid var(--rule); }
+.guide-list li:first-child { border-top: 0; padding-top: 0; }
+.guide-list a { font: 600 1.35rem/1.25 var(--serif); letter-spacing: -0.01em; text-decoration: none; }
+.guide-list a:hover { text-decoration: underline; }
+.guide-list p { margin: 0.4rem 0 0; color: var(--mute); }
+
+.guide-cover-img { display: block; width: 100%; max-width: 260px; height: auto; margin-bottom: 1.5rem; border: 1px solid var(--ink); }
+.guide-head .get-pdf { margin-top: 1.5rem; }
+.guide-head .get-pdf .eyebrow { margin-bottom: 0.5rem; }
+
+.guide-text h2, .guide-text h3, .guide-text h4, .guide-text h5, .guide-text h6 { margin: 2rem 0 0.75rem; }
+.guide-text > :first-child { margin-top: 0; }
+.guide-text h2 { font-size: 1.75rem; }
+.guide-text h3 { font-size: 1.4rem; }
+.guide-text h4 { font-size: 1.15rem; }
+.guide-text h5, .guide-text h6 { font-size: 1rem; }
+.guide-text ol { margin: 0 0 1.25rem; padding-left: 1.5rem; }
+.guide-text ol li { margin-bottom: 0.55rem; }
+.guide-text > .eyebrow { margin-top: 2.5rem; }
+
+.table-wrap { margin: 0 0 1.5rem; overflow-x: auto; }
+.guide-text table { width: 100%; border-collapse: collapse; font-size: 0.9rem; line-height: 1.45; }
+.guide-text th, .guide-text td { padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+.guide-text th { border-bottom: 1px solid var(--ink); font-weight: 600; }
+.guide-text td:first-child, .guide-text th:first-child { min-width: 6.5rem; }
