@@ -17,3 +17,4 @@ Pages: `index.html`, `guide.html`, `work.html` (pricing), `apply.html?plan=SLUG`
 `index.html` and `guide.html` use the Beehiiv embed (form id `c59cd420-21fc-4338-82b8-8e6c7f836334`). Card, border and background styling for that form is set in the Beehiiv form designer, not here.
 
 `work.html` is a Netlify Form: on a Netlify deploy, submissions land in the Netlify dashboard and redirect to `thanks.html?from=apply`. If you host elsewhere (Vercel), replace its `action` and remove the `data-netlify` attributes.
+- Homepage photo: `assets/satya-cutout.webp` (transparent cutout). Free-guide covers: `assets/guides/1.png` to `4.png`.

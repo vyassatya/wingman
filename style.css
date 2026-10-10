@@ -353,3 +353,63 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
 
 .masthead a.id, .masthead a.id:hover { text-decoration: none; color: inherit; }
 .portrait-link { display: block; width: fit-content; }
+
+/* Homepage: dark bar, fold, metrics, free guides */
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+.topbar { background: var(--ink); color: var(--bg); }
+.topbar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 2rem; padding-top: 1rem; padding-bottom: 1rem; }
+.topbar :focus-visible { outline-color: #fff; }
+.brand { font: 600 1.2rem/1 var(--serif); letter-spacing: -0.01em; color: var(--bg); text-decoration: none; }
+.brand:hover { text-decoration: none; }
+.topbar-nav { display: flex; flex-wrap: wrap; gap: 0.35rem 1.5rem; order: 3; width: 100%; font-size: 0.9rem; }
+.topbar-nav a { color: #cfc9ba; text-decoration: none; }
+.topbar-nav a:hover { color: #fff; text-decoration: underline; }
+.topbar-nav a[aria-current="page"] { color: #fff; text-decoration: underline; text-underline-offset: 0.35em; }
+.topbar .btn { order: 2; width: auto; margin-left: auto; padding: 0.65rem 1.1rem; font-size: 0.9rem; }
+
+@media (min-width: 900px) {
+  .topbar-nav { order: 0; width: auto; flex: 1; }
+  .topbar .btn { margin-left: 0; }
+}
+
+.fold .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 3rem; align-items: end; }
+.fold-copy { align-self: center; padding: 4rem 0; text-align: center; }
+.fold-copy h1 { margin: 0 auto; max-width: 16ch; font-size: clamp(2.3rem, 4.8vw, 4.1rem); line-height: 1.04; letter-spacing: 0.005em; text-transform: uppercase; }
+.fold-copy .sub { max-width: 32rem; margin: 1.5rem auto 0; }
+.fold-copy p:last-child { margin: 2rem 0 0; }
+.fold-photo { display: block; grid-column: 2; grid-row: 1; }
+.fold-copy { grid-column: 1; grid-row: 1; }
+.fold-photo img { display: block; width: auto; height: clamp(300px, 34vw, 440px); }
+
+.stats-bar { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.stat-list { list-style: none; margin: 0; padding: 2rem 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.stat-list li { padding-left: 1rem; border-left: 2px solid var(--accent); }
+.stat-num { display: block; font: 600 clamp(2rem, 4vw, 2.75rem)/1 var(--serif); }
+.stat-label { display: block; margin-top: 0.5rem; font-size: 0.9rem; line-height: 1.35; color: var(--mute); }
+
+.guides { overflow: hidden; }
+.guides-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem; align-items: center; padding-top: 3rem; padding-bottom: 3rem; }
+.fan { --w: clamp(90px, 13vw, 160px); display: flex; justify-content: center; align-items: flex-end; padding: 1.5rem 0 1rem; }
+.guide-cover { position: relative; flex: none; width: var(--w); height: calc(var(--w) * 1.35); margin: 0 calc(var(--w) * -0.13); border: 1px solid var(--ink); background: #ece7da; overflow: hidden; transform-origin: 50% 100%; }
+.guide-cover:nth-child(1) { transform: rotate(-9deg) translateY(10px); }
+.guide-cover:nth-child(2) { transform: rotate(-3deg); }
+.guide-cover:nth-child(3) { transform: rotate(3deg); }
+.guide-cover:nth-child(4) { transform: rotate(9deg) translateY(10px); }
+.guide-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.guide-cover .label { display: none; position: absolute; inset: 0; align-items: center; justify-content: center; padding: 0.5rem; text-align: center; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mute); }
+.guide-cover.missing .label { display: flex; }
+.guides-copy h2 { margin-bottom: 1.5rem; }
+.guides-copy p:last-child { margin: 0; }
+
+@media (max-width: 720px) {
+  .fold .wrap { grid-template-columns: 1fr; }
+  .fold-photo { grid-column: 1; grid-row: 1; justify-self: center; padding-top: 1.5rem; }
+  .fold-copy { grid-column: 1; grid-row: 2; }
+  .fold-photo img { height: 300px; }
+  .fold-copy { padding: 2rem 0 3rem; }
+  .stat-list { grid-template-columns: repeat(2, 1fr); padding: 1.5rem 0; }
+  .guides-grid { grid-template-columns: 1fr; padding-top: 2rem; padding-bottom: 2.5rem; }
+  .fan { --w: 95px; }
+}
