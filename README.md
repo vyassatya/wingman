@@ -25,7 +25,7 @@ Pages: `index.html`, `guides.html`, `work.html` (pricing), `apply.html?plan=SLUG
 
 ## Growth Readiness Test
 
-Route `/growth-readiness` (`growth-readiness.html`, rewritten in `vercel.json`; `_redirects` for Netlify). The "Ready to scale" nav button and the homepage "I'm ready to scale" button go to `/growth-readiness#start`, which opens question 1. Without the hash the landing page shows.
+Route `/growth-readiness` (`growth-readiness.html`, rewritten in `vercel.json`; `_redirects` for Netlify). The "Ready to scale" nav button and the homepage "Ready to Grow" button go to `/growth-readiness#start`, which opens question 1. Without the hash the landing page shows.
 
 - Scoring and UI: `growth-readiness.js` (scoring has no DOM and verifies the weights sum to 100 on load).
 - Supabase: set `SUPABASE_URL` and `SUPABASE_ANON_KEY` in `growth-readiness-config.js`; create the table with `supabase/assessment_submissions.sql` (insert-only, no public select).
