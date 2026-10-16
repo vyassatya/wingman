@@ -6,6 +6,21 @@
   var page = path.split("/").pop().replace(/\.html$/, "") || "index";
   var inGuides = /\/guides\//.test(path);
   function cur(name) { return page === name || (name === "guides" && inGuides) ? ' aria-current="page"' : ""; }
+  var onFile = location.protocol === "file:";
+  var grHref = onFile ? base + "growth-readiness.html#start" : "/growth-readiness#start";
+  /* Remember UTM parameters for the Growth Readiness Test. */
+  try {
+    var m, keys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"], found = {}, any = false, j;
+    for (j = 0; j < keys.length; j++) {
+      m = new RegExp("[?&]" + keys[j] + "=([^&#]*)").exec(location.search);
+      if (m) { found[keys[j]] = decodeURIComponent(m[1].replace(/\+/g, " ")); any = true; }
+    }
+    if (any) { sessionStorage.setItem("gr_utm", JSON.stringify(found)); }
+  } catch (e) { /* storage may be blocked */ }
+  document.addEventListener("DOMContentLoaded", function () {
+    var links = document.querySelectorAll("a[data-gr]");
+    for (var k = 0; k < links.length; k++) { links[k].setAttribute("href", grHref); }
+  });
   document.write(
     '<header class="topbar">' +
       '<div class="wrap">' +
@@ -17,7 +32,7 @@
           '<a href="' + base + 'guides.html"' + cur("guides") + '>Guide</a>' +
           '<a href="' + base + 'about.html"' + cur("about") + '>About</a>' +
         '</nav>' +
-        '<a class="btn" href="' + base + 'work.html">Ready to scale</a>' +
+        '<a class="btn" data-gr href="' + grHref + '">Ready to scale</a>' +
       '</div>' +
     '</header>'
   );

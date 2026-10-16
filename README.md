@@ -22,3 +22,11 @@ Pages: `index.html`, `guides.html`, `work.html` (pricing), `apply.html?plan=SLUG
 ## Guides library
 
 `guides.html` lists the guide pages in `guides/*.html`. Each page is built from a PDF in `guides/` (text from the PDF, cover from page 1 saved to `assets/guides/<slug>.png`). The text is public; the "Get the PDF" block is the Beehiiv embed.
+
+## Growth Readiness Test
+
+Route `/growth-readiness` (`growth-readiness.html`, rewritten in `vercel.json`; `_redirects` for Netlify). The "Ready to scale" nav button and the homepage "I'm ready to scale" button go to `/growth-readiness#start`, which opens question 1. Without the hash the landing page shows.
+
+- Scoring and UI: `growth-readiness.js` (scoring has no DOM and verifies the weights sum to 100 on load).
+- Supabase: set `SUPABASE_URL` and `SUPABASE_ANON_KEY` in `growth-readiness-config.js`; create the table with `supabase/assessment_submissions.sql` (insert-only, no public select).
+- Results show only after a successful insert. Until Supabase is configured the email step shows a "not configured" error.

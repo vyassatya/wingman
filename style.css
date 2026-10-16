@@ -442,3 +442,59 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
 .guide-text th, .guide-text td { padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
 .guide-text th { border-bottom: 1px solid var(--ink); font-weight: 600; }
 .guide-text td:first-child, .guide-text th:first-child { min-width: 6.5rem; }
+
+/* Growth Readiness Test */
+
+.gr { padding-bottom: 3rem; }
+.gr-landing { padding: 3rem 0 1rem; }
+.gr-landing h1 { font-size: clamp(2.2rem, 6.5vw, 3.4rem); line-height: 1.06; letter-spacing: -0.02em; }
+.gr-landing .lede { margin-bottom: 1.5rem; }
+.gr-start-row { margin: 1.75rem 0 0.75rem; }
+.gr-starting #gr-landing { display: none; }
+.gr-app { padding: 2rem 0 1rem; }
+.gr-app[hidden], .gr-landing[hidden] { display: none; }
+
+.gr-count { margin: 0 0 0.6rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mute); }
+.gr-progress { margin-bottom: 2rem; }
+.gr-bar { height: 4px; background: var(--rule); }
+.gr-bar > span { display: block; height: 100%; background: var(--ink); }
+.gr-bar-lg { height: 8px; }
+.gr-pillar { margin-bottom: 0.5rem; }
+.gr-q { font-size: clamp(1.5rem, 4.6vw, 2rem); line-height: 1.2; margin: 0 0 1.5rem; outline: none; }
+
+.gr-opts { display: grid; gap: 0.6rem; }
+.gr-opt {
+  display: block; width: 100%; margin: 0; padding: 0.95rem 1rem;
+  border: 1px solid var(--ink); border-radius: 0; background: transparent; color: var(--ink);
+  font: 1rem/1.4 var(--sans); text-align: left; cursor: pointer;
+  -webkit-appearance: none; appearance: none; -webkit-tap-highlight-color: transparent;
+}
+@media (hover: hover) { .gr-opt:hover { background: #ece7da; } }
+.gr-opt[aria-pressed="true"] { padding: calc(0.95rem - 1px) calc(1rem - 1px); border: 2px solid var(--accent); }
+
+.gr-back { margin: 1.5rem 0 0; }
+.gr-link { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 0.2em; cursor: pointer; -webkit-appearance: none; appearance: none; }
+.gr-link[hidden] { display: none; }
+.gr-error { margin: 0 0 1rem; font-weight: 600; }
+.gr-error[hidden] { display: none; }
+.gr-app form .btn { width: auto; }
+.gr-app form .btn:disabled { opacity: 0.6; cursor: default; }
+
+.gr-score { margin: 0 0 0.5rem; font: 600 clamp(3.5rem, 16vw, 6rem)/1 var(--serif); letter-spacing: -0.03em; outline: none; }
+.gr-score span { font-size: 1.15em; }
+.gr-band { margin: 0 0 0.75rem; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.gr-band-text { font-family: var(--serif); font-size: 1.25rem; line-height: 1.4; margin-bottom: 0.75rem; }
+.gr-h { margin: 2.5rem 0 1.25rem; font-size: 1.5rem; }
+.gr-pillars { list-style: none; margin: 0; padding: 0; }
+.gr-pillars li { margin-bottom: 1.1rem; }
+.gr-pillar-row { display: flex; justify-content: space-between; margin-bottom: 0.35rem; font-size: 0.95rem; }
+.gr-pillar-row span:last-child { font-weight: 600; }
+.gr-risk { padding: 1.5rem 0; border-top: 1px solid var(--rule); }
+.gr-risk h3 { margin-bottom: 0.6rem; }
+.gr-risk p { margin-bottom: 0.6rem; }
+.gr-risk .eyebrow { margin-bottom: 0.5rem; }
+.gr-cta { margin-top: 1rem; padding: 1.75rem 0 1rem; border-top: 1px solid var(--ink); }
+.gr-cta-copy { font-family: var(--serif); font-size: 1.25rem; line-height: 1.4; margin-bottom: 1.25rem; }
+.gr-cta .buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.gr-share { margin-top: 1.5rem; }
+.gr-restart { margin-top: 0.25rem; }

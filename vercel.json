@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/growth-readiness", "destination": "/growth-readiness.html" }
+  ]
+}
