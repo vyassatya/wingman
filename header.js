@@ -32,7 +32,7 @@
           '<a href="' + base + 'guides.html"' + cur("guides") + '>Guide</a>' +
           '<a href="' + base + 'about.html"' + cur("about") + '>About</a>' +
         '</nav>' +
-        '<a class="btn" data-gr href="' + grHref + '">Ready to scale</a>' +
+        '<a class="btn" data-gr href="' + grHref + '">Ready to Grow</a>' +
       '</div>' +
     '</header>'
   );
