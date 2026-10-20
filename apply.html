@@ -26,18 +26,51 @@
 <main id="main" class="col">
 
   <section class="page-head" id="plan" hidden>
-    <h1 id="plan-name"></h1>
-    <p class="lede" id="plan-what"></p>
-    <p class="plan-price" id="plan-price"></p>
+    <div data-plan="better-call-sv" data-kind="talk" hidden>
+      <h1>Better Call SV</h1>
+      <p class="plan-price">₹2,999</p>
+      <p>For founders who are on the fence, or stuck in a spot they can't quite talk their way out of, and aren't ready to sign up for a longer engagement. If you're seriously weighing an idea, need a sharp second opinion before you make a call you can't undo, or are caught in a messy situation with an investor, a vendor or a partner, this is where you start. One focused conversation, an honest read of where you actually stand, and a clear next move you can act on the same week.</p>
+    </div>
+    <div data-plan="cofounder" data-kind="work" hidden>
+      <h1>Wingman Cofounder</h1>
+      <p class="plan-price">₹50,000 for 30 days</p>
+      <p>Seats are limited and offered only to serious people who have just started up, or who plan to start within the next three months. For 30 days you get a weekly strategy call with me, plus WhatsApp access through the day, whenever a question can't wait for the next call. Think of it as the most affordable way to become a founder without paying the usual tuition fee of costly mistakes.</p>
+      <p>Every idea goes through my proprietary QGT framework (Quick Growth Tests), so you find out whether it has legs before you sink serious money and time into it. By day 30, you will have gone from someone sitting on the fence to someone actively running experiments in the real market. If the experiments work, we move you up to Wingman Launch. If they don't, we close the engagement there, and you walk away having saved yourself far more than the fee.</p>
+    </div>
+    <div data-plan="launch" data-kind="work" hidden>
+      <h1>Wingman Launch</h1>
+      <p class="plan-price">₹1,50,000 for 60 days</p>
+      <p>Built for businesses doing ₹60 lakh to ₹3 crore a year that are ready to raise, whether through franchising or venture capital. Over 60 days, we take you from the ground up to investor-ready.</p>
+      <p>You get:</p>
+      <ul class="dash">
+        <li>a weekly call with me</li>
+        <li>access to the pitch decks of top startups</li>
+        <li>guided exercises to get your data room in order</li>
+        <li>a clear understanding of what investors actually want to hear, and how to sell to them</li>
+      </ul>
+      <p>We also work on the approach and the mindset that walking into those rooms demands. And we give you the tools to build a story and a deck that make investors lean in.</p>
+      <p>One condition: this needs hardcore weekly commitment from the founders. We bring the playbook; the work has to come from you.</p>
+    </div>
+    <div data-plan="scale" data-kind="work" hidden>
+      <h1>Wingman Scale</h1>
+      <p class="plan-price">₹6,00,000 for 90 days</p>
+      <p>For entrepreneurs who have crossed ₹3 crore in sales and want to take the business to ₹10 crore and beyond. This is a comprehensive 90-day program built on my proprietary Growth Blueprint. We:</p>
+      <ul class="dash">
+        <li>diagnose the financial, tech and operational weak spots holding you back</li>
+        <li>free up your time as a founder</li>
+        <li>put in the systems a bigger business needs to run without you</li>
+        <li>use Quick Growth Tests to find the levers worth pulling hard</li>
+      </ul>
+      <p>Most business owners never step back to work on the business. They stay buried in it, day after day, and keep wondering why the growth isn't coming. That is exactly what we fix here. My team and I get into your business and unpack it with you, hands-on. Any additional specialists you need, such as a digital marketer, a finance expert or a tech lead, are billed separately.</p>
+    </div>
   </section>
 
   <section class="section" id="missing">
-    <h2>Choose a plan</h2>
+    <h2>Choose an offer</h2>
     <ul class="dash">
-      <li><a href="apply.html?plan=second-opinion">Business Second Opinion</a></li>
-      <li><a href="apply.html?plan=blueprint">Business Blueprint</a></li>
-      <li><a href="apply.html?plan=launchpad">Wingman Launchpad</a></li>
-      <li><a href="apply.html?plan=sprint">SOS Sprint</a></li>
+      <li><a href="apply.html?plan=better-call-sv">Better Call SV</a></li>
+      <li><a href="apply.html?plan=cofounder">Wingman Cofounder</a></li>
+      <li><a href="apply.html?plan=launch">Wingman Launch</a></li>
       <li><a href="apply.html?plan=scale">Wingman Scale</a></li>
     </ul>
   </section>
@@ -67,7 +100,7 @@
         <textarea id="t-decision" name="decision" required></textarea>
       </div>
 
-      <button class="btn" type="submit">Book this</button>
+      <button class="btn" type="submit">Book the ₹2,999 call</button>
       <p class="fine">No payment is taken on this page.</p>
     </form>
   </section>
@@ -117,23 +150,19 @@
 </footer>
 
 <script>
-  var PLANS = {
-    "second-opinion": { kind: "talk", name: "Business Second Opinion", what: "30-minute call to pressure-test one important business decision.", price: "\u20B99,500" },
-    "blueprint": { kind: "talk", name: "Business Blueprint", what: "75-minute working session, a written action plan, and 7 days of clarification support.", price: "\u20B919,500" },
-    "launchpad": { kind: "work", name: "Wingman Launchpad", what: "Fixed 45-day engagement to take a pre-revenue business from idea or validation to launch-ready.", price: "Starting \u20B950,000" },
-    "sprint": { kind: "work", name: "SOS Sprint", what: "30-day engagement for an existing business with a specific growth, operations, profitability, systems, or founder-dependency problem.", price: "Starting \u20B91.5 lakh" },
-    "scale": { kind: "work", name: "Wingman Scale", what: "90-day high-touch engagement for established businesses looking to materially grow, systemise, and scale.", price: "Starting \u20B96.5 lakh" }
-  };
   var slug = new URLSearchParams(location.search).get("plan");
-  var plan = Object.prototype.hasOwnProperty.call(PLANS, slug) ? PLANS[slug] : null;
-  if (plan) {
-    document.title = "Apply: " + plan.name;
-    document.getElementById("plan-name").textContent = plan.name;
-    document.getElementById("plan-what").textContent = plan.what;
-    document.getElementById("plan-price").textContent = plan.price;
+  var blocks = document.querySelectorAll("#plan [data-plan]");
+  var offer = null;
+  for (var i = 0; i < blocks.length; i++) {
+    if (blocks[i].getAttribute("data-plan") === slug) { offer = blocks[i]; }
+  }
+  if (offer) {
+    document.title = "Apply: " + offer.querySelector("h1").textContent;
+    offer.hidden = false;
     document.getElementById("plan").hidden = false;
     document.getElementById("missing").hidden = true;
-    var section = document.getElementById("form-" + plan.kind);
+    var kind = offer.getAttribute("data-kind");
+    var section = document.getElementById("form-" + kind);
     var form = section.querySelector("form");
     form.action = "thanks.html?plan=" + encodeURIComponent(slug);
     form.querySelector('input[name="plan"]').value = slug;
