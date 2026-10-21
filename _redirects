@@ -1,1 +1,4 @@
-/growth-readiness  /growth-readiness.html  200
+/growth-readiness  /readiness  301
+/growth-readiness.html  /readiness  301
+/readiness  /readiness.html  200
+/idea-readiness  /idea-readiness.html  200

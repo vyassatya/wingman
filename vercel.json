@@ -1,5 +1,10 @@
 {
+  "redirects": [
+    { "source": "/growth-readiness", "destination": "/readiness", "permanent": true },
+    { "source": "/growth-readiness.html", "destination": "/readiness", "permanent": true }
+  ],
   "rewrites": [
-    { "source": "/growth-readiness", "destination": "/growth-readiness.html" }
+    { "source": "/readiness", "destination": "/readiness.html" },
+    { "source": "/idea-readiness", "destination": "/idea-readiness.html" }
   ]
 }

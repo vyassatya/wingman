@@ -7,7 +7,7 @@
   var inGuides = /\/guides\//.test(path);
   function cur(name) { return page === name || (name === "guides" && inGuides) ? ' aria-current="page"' : ""; }
   var onFile = location.protocol === "file:";
-  var grHref = onFile ? base + "growth-readiness.html#start" : "/growth-readiness#start";
+  var grHref = onFile ? base + "readiness.html" : "/readiness";
   /* Remember UTM parameters for the Growth Readiness Test. */
   try {
     var m, keys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"], found = {}, any = false, j;
@@ -20,6 +20,10 @@
   document.addEventListener("DOMContentLoaded", function () {
     var links = document.querySelectorAll("a[data-gr]");
     for (var k = 0; k < links.length; k++) { links[k].setAttribute("href", grHref); }
+    if (onFile) {
+      var idea = document.querySelectorAll("a[data-idea]");
+      for (var n = 0; n < idea.length; n++) { idea[n].setAttribute("href", base + "idea-readiness.html"); }
+    }
   });
   document.write(
     '<header class="topbar">' +
