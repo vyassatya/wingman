@@ -1,7 +1,7 @@
 /* Single stylesheet for all pages. No gradients, shadows, or animation. */
 
 :root {
-  --bg: #f7f4ed;
+  --bg: #fff;
   --ink: #151515;
   --mute: #5f5b52;
   --rule: #d8d2c4;
@@ -499,3 +499,62 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
 .fold-copy .fold-support { max-width: 28rem; margin: 1rem auto 0; font-size: 0.95rem; color: var(--mute); }
 .fold-copy .fold-idea { margin: 1rem 0 0; font-size: 0.9rem; }
 .fold-copy .fold-idea a { color: var(--mute); }
+
+/* Nav: Invest with me (not a link yet) */
+
+.topbar-soon { color: #cfc9ba; cursor: default; }
+.topbar-soon small { margin-left: 0.3rem; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8d887c; }
+
+/* Homepage: trust blocks */
+
+.featured { padding: 1.75rem 0 2rem; border-top: 1px solid var(--ink); }
+.featured-label { margin: 0 0 1rem; text-align: center; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8a8a8a; }
+.featured-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 2rem; list-style: none; margin: 0; padding: 0; }
+.featured-row li { font-size: 1.3rem; line-height: 1; font-weight: 700; color: #8a8a8a; white-space: nowrap; }
+.wm-serif { font-family: var(--serif); letter-spacing: -0.01em; }
+.wm-sans { font-family: var(--sans); letter-spacing: 0.02em; }
+
+.findme { background: var(--ink); color: #fff; padding: 3rem 0; }
+.findme h2 { color: #fff; }
+.findme-sub { margin: 0.5rem 0 2rem; color: #cfc9ba; }
+.findme-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+.findme-list a, .findme-list li > span { display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; color: #fff; text-decoration: none; }
+.findme-list a:hover .findme-name { text-decoration: underline; }
+.findme-list .soon { color: #8d887c; }
+.findme-list .soon > span { color: #8d887c; }
+.findme-name { font: 600 1.15rem/1.2 var(--serif); }
+.findme-tag { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: #cfc9ba; }
+.findme-list .soon .findme-tag { color: #8d887c; }
+.icon { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+.invest { padding: 3rem 0; }
+.invest h2 { margin-bottom: 1.5rem; }
+.invest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; list-style: none; margin: 0; padding: 0; }
+.invest-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 8rem; padding: 1.25rem; background: var(--ink); color: #fff; }
+.invest-name { font: 600 1.35rem/1.2 var(--serif); }
+.invest-line { margin-top: 1.5rem; font-size: 0.9rem; color: #cfc9ba; }
+
+.notes { padding: 3rem 0; }
+.notes h2 { margin-bottom: 1.5rem; }
+.notes-row { display: flex; justify-content: center; padding: 1rem 0; }
+.notes-row img { display: block; width: 220px; max-width: 30%; height: auto; margin: 0 -1.75rem; border: 1px solid var(--rule); background: #fff; }
+.notes-row img:nth-child(odd) { transform: rotate(-4deg); }
+.notes-row img:nth-child(even) { transform: rotate(3deg); }
+
+.about-block { padding: 3rem 0 2.5rem; border-top: 1px solid var(--rule); }
+.about-block > .wrap > p { max-width: 680px; margin: 1rem 0 2rem; }
+.about-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+.about-cols li { display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+.about-label { font: 600 1.15rem/1.2 var(--serif); }
+.about-line { font-size: 0.95rem; color: var(--mute); }
+
+@media (max-width: 720px) {
+  .featured-row { gap: 0.75rem 1.25rem; justify-content: center; }
+  .featured-row li { font-size: 1.1rem; }
+  .findme-list { grid-template-columns: repeat(2, 1fr); }
+  .invest-grid { grid-template-columns: repeat(2, 1fr); }
+  .notes-row { flex-direction: column; align-items: center; }
+  .notes-row img { max-width: 100%; margin: 0 0 1rem; transform: none !important; }
+  .about-cols { grid-template-columns: 1fr; }
+}
+.findme-list a .findme-tag { text-transform: none; letter-spacing: 0; font-size: 0.9rem; }
