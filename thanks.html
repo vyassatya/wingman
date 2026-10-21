@@ -63,8 +63,7 @@
   var q = new URLSearchParams(location.search);
   var key = q.get("from");
   var plan = q.get("plan");
-  if (plan === "better-call-sv") key = "save";
-  if (plan === "cofounder" || plan === "launch" || plan === "scale") key = "apply";
+  if (plan === "launch" || plan === "scale") key = "apply";
   var show = document.getElementById("t-" + key);
   if (show && (key === "guide" || key === "apply" || key === "save")) {
     document.getElementById("t-generic").hidden = true;

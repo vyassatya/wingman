@@ -26,18 +26,7 @@
 <main id="main" class="col">
 
   <section class="page-head" id="plan" hidden>
-    <div data-plan="better-call-sv" data-kind="talk" hidden>
-      <h1>Better Call SV</h1>
-      <p class="plan-price">₹2,999</p>
-      <p>For founders who are on the fence, or stuck in a spot they can't quite talk their way out of, and aren't ready to sign up for a longer engagement. If you're seriously weighing an idea, need a sharp second opinion before you make a call you can't undo, or are caught in a messy situation with an investor, a vendor or a partner, this is where you start. One focused conversation, an honest read of where you actually stand, and a clear next move you can act on the same week.</p>
-    </div>
-    <div data-plan="cofounder" data-kind="work" hidden>
-      <h1>Wingman Cofounder</h1>
-      <p class="plan-price">₹50,000 for 30 days</p>
-      <p>Seats are limited and offered only to serious people who have just started up, or who plan to start within the next three months. For 30 days you get a weekly strategy call with me, plus WhatsApp access through the day, whenever a question can't wait for the next call. Think of it as the most affordable way to become a founder without paying the usual tuition fee of costly mistakes.</p>
-      <p>Every idea goes through my proprietary QGT framework (Quick Growth Tests), so you find out whether it has legs before you sink serious money and time into it. By day 30, you will have gone from someone sitting on the fence to someone actively running experiments in the real market. If the experiments work, we move you up to Wingman Launch. If they don't, we close the engagement there, and you walk away having saved yourself far more than the fee.</p>
-    </div>
-    <div data-plan="launch" data-kind="work" hidden>
+    <div data-plan="launch" hidden>
       <h1>Wingman Launch</h1>
       <p class="plan-price">₹1,50,000 for 60 days</p>
       <p>Built for businesses doing ₹60 lakh to ₹3 crore a year that are ready to raise, whether through franchising or venture capital. Over 60 days, we take you from the ground up to investor-ready.</p>
@@ -51,7 +40,7 @@
       <p>We also work on the approach and the mindset that walking into those rooms demands. And we give you the tools to build a story and a deck that make investors lean in.</p>
       <p>One condition: this needs hardcore weekly commitment from the founders. We bring the playbook; the work has to come from you.</p>
     </div>
-    <div data-plan="scale" data-kind="work" hidden>
+    <div data-plan="scale" hidden>
       <h1>Wingman Scale</h1>
       <p class="plan-price">₹6,00,000 for 90 days</p>
       <p>For entrepreneurs who have crossed ₹3 crore in sales and want to take the business to ₹10 crore and beyond. This is a comprehensive 90-day program built on my proprietary Growth Blueprint. We:</p>
@@ -68,41 +57,11 @@
   <section class="section" id="missing">
     <h2>Choose an offer</h2>
     <ul class="dash">
-      <li><a href="apply.html?plan=better-call-sv">Better Call SV</a></li>
-      <li><a href="apply.html?plan=cofounder">Wingman Cofounder</a></li>
+      <li><a href="https://rzp.io/rzp/fixercall">The Fixer Call</a></li>
+      <li><a href="https://rzp.io/rzp/wingmancofounder">Wingman Cofounder</a></li>
       <li><a href="apply.html?plan=launch">Wingman Launch</a></li>
       <li><a href="apply.html?plan=scale">Wingman Scale</a></li>
     </ul>
-  </section>
-
-  <section class="section" id="form-talk" hidden>
-    <form name="apply-talk" method="post" action="thanks.html" data-netlify="true" data-netlify-honeypot="bot-field">
-      <p class="hp" hidden><label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-      <input type="hidden" name="plan" value="">
-
-      <div class="field">
-        <label for="t-name">Name</label>
-        <input type="text" id="t-name" name="name" required autocomplete="name">
-      </div>
-
-      <div class="field">
-        <label for="t-email">Email</label>
-        <input type="email" id="t-email" name="email" required autocomplete="email">
-      </div>
-
-      <div class="field">
-        <label for="t-phone">Phone</label>
-        <input type="tel" id="t-phone" name="phone" required autocomplete="tel">
-      </div>
-
-      <div class="field">
-        <label for="t-decision">The decision</label>
-        <textarea id="t-decision" name="decision" required></textarea>
-      </div>
-
-      <button class="btn" type="submit">Book the ₹2,999 call</button>
-      <p class="fine">No payment is taken on this page.</p>
-    </form>
   </section>
 
   <section class="section" id="form-work" hidden>
@@ -151,6 +110,9 @@
 
 <script>
   var slug = new URLSearchParams(location.search).get("plan");
+  /* Offers that are paid directly through Razorpay no longer have an apply form. */
+  var PAY = { "better-call-sv": "https://rzp.io/rzp/fixercall", "cofounder": "https://rzp.io/rzp/wingmancofounder" };
+  if (PAY.hasOwnProperty(slug)) { location.replace(PAY[slug]); }
   var blocks = document.querySelectorAll("#plan [data-plan]");
   var offer = null;
   for (var i = 0; i < blocks.length; i++) {
@@ -161,8 +123,7 @@
     offer.hidden = false;
     document.getElementById("plan").hidden = false;
     document.getElementById("missing").hidden = true;
-    var kind = offer.getAttribute("data-kind");
-    var section = document.getElementById("form-" + kind);
+    var section = document.getElementById("form-work");
     var form = section.querySelector("form");
     form.action = "thanks.html?plan=" + encodeURIComponent(slug);
     form.querySelector('input[name="plan"]').value = slug;
