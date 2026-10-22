@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-99ZQKRZ7DR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-99ZQKRZ7DR');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Airbnb Arbitrage Payback Calculator</title>
+<meta name="description" content="An Airbnb arbitrage payback model covering setup capex, rent, operating costs and an occupancy stress test against the lease lock-in.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<script src="../header.js"></script>
+<noscript><header class="topbar"><div class="wrap"><a class="brand" href="../index.html">Satya Vyas</a><a class="btn" href="../readiness.html">Ready to Grow</a></div></header></noscript>
+
+<main id="main" class="col">
+
+  <section class="page-head guide-head">
+    <img class="guide-cover-img" src="../assets/guides/payback-calculator.png" width="800" height="619" alt="Cover of Airbnb Arbitrage Payback Calculator">
+    <h1>Airbnb Arbitrage Payback Calculator</h1>
+    <div class="get-pdf">
+      <p class="eyebrow">Get the PDF</p>
+      <div class="beehiiv-embed">
+        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="c59cd420-21fc-4338-82b8-8e6c7f836334"></script>
+      </div>
+    </div>
+  </section>
+
+  <article class="section guide-text">
+<h2><strong>Airbnb arbitrage payback</strong></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th><strong>Inputs</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Quick note</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setup capex</td>
+<td>₹300,000</td>
+<td>Furniture, appliances, decor, photography</td>
+</tr>
+<tr>
+<td>Projected monthly booking subtotal</td>
+<td>₹100,000</td>
+<td>Use a normal month, not your best month</td>
+</tr>
+<tr>
+<td>Monthly rent</td>
+<td>₹50,000</td>
+<td>Fixed payment to landlord</td>
+</tr>
+<tr>
+<td>Monthly operating costs</td>
+<td>₹12,000</td>
+<td>Cleaning, utilities, wifi, consumables, repairs</td>
+</tr>
+<tr>
+<td>Airbnb host fee</td>
+<td>15.5%</td>
+<td>Single-fee model; deducted from host payout</td>
+</tr>
+<tr>
+<td>Residual value of setup</td>
+<td>25.0%</td>
+<td>Assumption: value you can recover on exit</td>
+</tr>
+<tr>
+<td>Occupancy / revenue stress</td>
+<td>100.0%</td>
+<td>100% = base case; try 80% for a stress test</td>
+</tr>
+<tr>
+<td>Secured lease / lock-in</td>
+<td>11 months</td>
+<td>Months of contractual certainty</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th><strong>Monthly economics</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Note</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stressed booking subtotal</td>
+<td>₹100,000</td>
+<td><em>Projected bookings × stress factor</em></td>
+</tr>
+<tr>
+<td>Airbnb host fee</td>
+<td>(₹15,500)</td>
+<td><em>Deducted from host payout</em></td>
+</tr>
+<tr>
+<td>Host payout after Airbnb fee</td>
+<td>₹84,500</td>
+<td></td>
+</tr>
+<tr>
+<td>Rent</td>
+<td>(₹50,000)</td>
+<td></td>
+</tr>
+<tr>
+<td>Operating costs</td>
+<td>(₹12,000)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Cash left each month</strong></td>
+<td><strong>₹22,500</strong></td>
+<td><em>Amount available to recover capex</em></td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th><strong>Payback test</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Note</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Effective capex at risk</td>
+<td>₹225,000</td>
+<td>Setup capex less assumed residual value</td>
+</tr>
+<tr>
+<td>Payback period</td>
+<td><strong>10.0 months</strong></td>
+<td>Effective capex ÷ monthly cash left</td>
+</tr>
+<tr>
+<td>Lease / lock-in</td>
+<td>11 months</td>
+<td></td>
+</tr>
+<tr>
+<td>Payback vs lease</td>
+<td><strong>Tight</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Gross booking-to-rent</td>
+<td>2.0x</td>
+<td>Useful spread check; not a universal benchmark</td>
+</tr>
+</tbody>
+</table></div>
+<h3><strong>Rule of thumb</strong></h3>
+<p>For an 11-month lease, I would personally want payback around 6–7 months — or negotiate a longer lock-in.</p>
+<p><em>Example: ₹100 booking subtotal under Airbnb's 15.5% single host fee → about ₹84.50 host earnings before taxes/other adjustments.</em> Source: <a href="https://www.airbnb.com/help/article/1857" rel="noopener">https://www.airbnb.com/<wbr>help/<wbr>article/<wbr>1857</a> <em>Built by @iamsatyavyas</em></p>
+  </article>
+
+</main>
+
+<footer class="col">
+  <div class="footer">
+    <span>&copy; 2026 Satya Vyas</span>
+    <span class="footer-links"><a href="https://www.instagram.com/iamsatyavyas" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/satyavyas" rel="noopener">LinkedIn</a></span>
+  </div>
+</footer>
+</body>
+</html>
