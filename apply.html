@@ -94,6 +94,7 @@
         <textarea id="w-stuck" name="stuck" required></textarea>
       </div>
 
+      <p class="gr-error" id="apply-err" role="alert" hidden></p>
       <button class="btn" type="submit">Apply</button>
       <p class="fine">No payment is taken on this page.</p>
     </form>
@@ -108,6 +109,7 @@
   </div>
 </footer>
 
+<script src="growth-readiness-config.js"></script>
 <script>
   var slug = new URLSearchParams(location.search).get("plan");
   /* Offers that are paid directly through Razorpay no longer have an apply form. */
@@ -128,6 +130,44 @@
     form.action = "thanks.html?plan=" + encodeURIComponent(slug);
     form.querySelector('input[name="plan"]').value = slug;
     section.hidden = false;
+
+    /* Insert one row into public.leads (source, plan, name, email, phone, business, revenue, note; created_at is set by the database).
+       The form has no phone field, so phone is left null. */
+    var errEl = document.getElementById("apply-err"), btn = form.querySelector('button[type="submit"]'), busy = false;
+    function fail(msg) { errEl.textContent = msg; errEl.hidden = false; busy = false; btn.disabled = false; }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (busy) { return; }
+      if (form.elements["bot-field"] && form.elements["bot-field"].value) { return; }
+      function val(n) { return form.elements[n].value.replace(/^\s+|\s+$/g, ""); }
+      var cfg = window.GR_CONFIG || {};
+      if (!cfg.SUPABASE_URL || !cfg.SUPABASE_ANON_KEY) { fail("Applications are not set up yet (missing Supabase URL or key)."); return; }
+      busy = true; btn.disabled = true; errEl.hidden = true;
+      var row = {
+        source: "apply", plan: slug, name: val("name"), email: val("email").toLowerCase(), phone: null,
+        business: val("business"), revenue: val("stage_or_revenue"), note: val("stuck")
+      };
+      var x = new XMLHttpRequest();
+      x.open("POST", String(cfg.SUPABASE_URL).replace(/\/+$/, "") + "/rest/v1/leads", true);
+      x.setRequestHeader("Content-Type", "application/json");
+      x.setRequestHeader("apikey", cfg.SUPABASE_ANON_KEY);
+      if (/^eyJ/.test(cfg.SUPABASE_ANON_KEY)) { x.setRequestHeader("Authorization", "Bearer " + cfg.SUPABASE_ANON_KEY); }
+      x.setRequestHeader("Prefer", "return=minimal");
+      x.timeout = 20000;
+      x.onload = function () {
+        if (x.status >= 200 && x.status < 300) {
+          try { if (typeof gtag === "function") { gtag("event", "apply_submitted", { plan: slug }); } } catch (err) { /* ignore */ }
+          location.href = "thanks.html?plan=" + encodeURIComponent(slug);
+          return;
+        }
+        var msg = "";
+        try { var j = JSON.parse(x.responseText); msg = j.message || j.error_description || j.error || ""; } catch (err) { /* not json */ }
+        fail("Could not send your application (" + x.status + (msg ? ": " + msg : "") + "). Try again.");
+      };
+      x.onerror = function () { fail("Could not send your application: network error. Check your connection and try again."); };
+      x.ontimeout = function () { fail("Could not send your application: the request timed out. Try again."); };
+      x.send(JSON.stringify(row));
+    });
   }
 </script>
 </body>
