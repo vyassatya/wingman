@@ -387,7 +387,7 @@
   function round2(x) { return Math.round(x * 100) / 100; }
 
   /* Row for public.assessments. Own columns: email, name, phone, business, industry, revenue, score, verdict, weakest
-     (created_at is set by the database). revenue holds the running path's monthly revenue; the setup path's investment
+     (created_at is set by the database). weakest is a text[]: the two areas shown as the first fixes, weakest first. revenue holds the running path's monthly revenue; the setup path's investment
      budget has no column, so it travels in answers with the per-question responses, scores and UTMs. */
   function buildRow() {
     var f = flow(), s = score(state.path, rawScores()), ans = {}, raw = {}, areas = {}, i, a;
@@ -407,7 +407,7 @@
       email: state.info.email.toLowerCase(), name: state.info.first, phone: state.info.phone,
       business: state.info.business || null, industry: state.info.industry || null,
       revenue: isRun ? state.info.money : null,
-      score: s.rounded, verdict: s.band.label, weakest: s.lowest.name, answers: answers
+      score: s.rounded, verdict: s.band.label, weakest: [s.lowest.name, s.second.name], answers: answers
     };
   }
 
