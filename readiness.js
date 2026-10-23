@@ -386,8 +386,9 @@
 
   function round2(x) { return Math.round(x * 100) / 100; }
 
-  /* Row for public.assessments (email, score, verdict, weakest, answers; created_at is set by the database).
-     Everything else collected (contact, business, money, per-question scores, area scores, UTMs) rides in the answers JSON. */
+  /* Row for public.assessments. Own columns: email, name, phone, business, industry, revenue, score, verdict, weakest
+     (created_at is set by the database). revenue holds the running path's monthly revenue; the setup path's investment
+     budget has no column, so it travels in answers with the per-question responses, scores and UTMs. */
   function buildRow() {
     var f = flow(), s = score(state.path, rawScores()), ans = {}, raw = {}, areas = {}, i, a;
     for (i = 0; i < 8; i++) { ans["q" + (i + 1)] = f.questions[i].options[state.ans[i]][0]; }
@@ -397,17 +398,17 @@
     for (k in u) { if (u.hasOwnProperty(k) && u[k]) { utm[k] = u[k]; hasUtm = true; } }
     var answers = {
       path: state.path,
-      profile: {
-        first_name: state.info.first, phone: state.info.phone,
-        business_name: state.info.business || null, industry: state.info.industry || null
-      },
-      monthly_revenue: isRun ? state.info.money : null,
       investment_budget: isRun ? null : state.info.money,
       responses: ans, raw_scores: raw, area_scores: areas,
       second_weakest: s.second.name, recommended_offer: OFFERS[offerFor(state.path, state.info.money)].name
     };
     if (hasUtm) { answers.utm = utm; }
-    return { email: state.info.email.toLowerCase(), score: s.rounded, verdict: s.band.label, weakest: s.lowest.name, answers: answers };
+    return {
+      email: state.info.email.toLowerCase(), name: state.info.first, phone: state.info.phone,
+      business: state.info.business || null, industry: state.info.industry || null,
+      revenue: isRun ? state.info.money : null,
+      score: s.rounded, verdict: s.band.label, weakest: s.lowest.name, answers: answers
+    };
   }
 
   function submit() {
