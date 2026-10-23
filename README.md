@@ -28,4 +28,4 @@ Pages: `index.html`, `guides.html`, `work.html` (pricing), `apply.html?plan=SLUG
 Route `/readiness` (`readiness.html`, `readiness.js`). `/growth-readiness` redirects to it (`vercel.json`, `_redirects`; `growth-readiness.html` is a fallback stub). `/idea-readiness` is a placeholder page. The homepage "Take the 2-min test" button and the nav "Ready to Grow" button open the test.
 
 - Two paths (already running / setting up), 4 info screens, 7 scored questions + 1 unscored, result after a successful Supabase insert.
-- Supabase: `SUPABASE_URL` and `SUPABASE_ANON_KEY` live in `growth-readiness-config.js`; create the table with `supabase/readiness_submissions.sql` (insert-only, no public select).
+- Supabase: `SUPABASE_URL` and `SUPABASE_ANON_KEY` live in `growth-readiness-config.js`; each completed test inserts one row into `public.assessments` (email, score, verdict, weakest, answers; insert-only RLS, no public select).

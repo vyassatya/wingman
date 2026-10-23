@@ -367,7 +367,7 @@
     var cfg = root.GR_CONFIG || {};
     if (!cfg.SUPABASE_URL || !cfg.SUPABASE_ANON_KEY) { cb("Results storage is not configured yet (missing Supabase URL or key)."); return; }
     var x = new XMLHttpRequest();
-    x.open("POST", String(cfg.SUPABASE_URL).replace(/\/+$/, "") + "/rest/v1/readiness_submissions", true);
+    x.open("POST", String(cfg.SUPABASE_URL).replace(/\/+$/, "") + "/rest/v1/assessments", true);
     x.setRequestHeader("Content-Type", "application/json");
     x.setRequestHeader("apikey", cfg.SUPABASE_ANON_KEY);
     if (/^eyJ/.test(cfg.SUPABASE_ANON_KEY)) { x.setRequestHeader("Authorization", "Bearer " + cfg.SUPABASE_ANON_KEY); }
@@ -386,21 +386,28 @@
 
   function round2(x) { return Math.round(x * 100) / 100; }
 
+  /* Row for public.assessments (email, score, verdict, weakest, answers; created_at is set by the database).
+     Everything else collected (contact, business, money, per-question scores, area scores, UTMs) rides in the answers JSON. */
   function buildRow() {
     var f = flow(), s = score(state.path, rawScores()), ans = {}, raw = {}, areas = {}, i, a;
     for (i = 0; i < 8; i++) { ans["q" + (i + 1)] = f.questions[i].options[state.ans[i]][0]; }
     for (i = 0; i < 7; i++) { raw["q" + (i + 1)] = f.questions[i].options[state.ans[i]][1]; }
     for (a = 0; a < s.areas.length; a++) { areas[s.areas[a].name] = round2(s.areas[a].score); }
-    var u = utms(), isRun = state.path === "running";
-    return {
-      path: state.path, first_name: state.info.first, email: state.info.email, phone: state.info.phone,
-      business_name: state.info.business || null, industry: state.info.industry || null,
-      monthly_revenue: isRun ? state.info.money : null, investment_budget: isRun ? null : state.info.money,
-      answers: ans, raw_scores: raw, overall_score: s.rounded, area_scores: areas,
-      lowest_area: s.lowest.name, second_lowest_area: s.second.name, self_reported_blocker: ans.q8,
-      result_band: s.band.label, recommended_offer: OFFERS[offerFor(state.path, state.info.money)].name,
-      utm_source: u.utm_source, utm_medium: u.utm_medium, utm_campaign: u.utm_campaign, utm_content: u.utm_content, utm_term: u.utm_term
+    var u = utms(), isRun = state.path === "running", k, utm = {}, hasUtm = false;
+    for (k in u) { if (u.hasOwnProperty(k) && u[k]) { utm[k] = u[k]; hasUtm = true; } }
+    var answers = {
+      path: state.path,
+      profile: {
+        first_name: state.info.first, phone: state.info.phone,
+        business_name: state.info.business || null, industry: state.info.industry || null
+      },
+      monthly_revenue: isRun ? state.info.money : null,
+      investment_budget: isRun ? null : state.info.money,
+      responses: ans, raw_scores: raw, area_scores: areas,
+      second_weakest: s.second.name, recommended_offer: OFFERS[offerFor(state.path, state.info.money)].name
     };
+    if (hasUtm) { answers.utm = utm; }
+    return { email: state.info.email.toLowerCase(), score: s.rounded, verdict: s.band.label, weakest: s.lowest.name, answers: answers };
   }
 
   function submit() {
