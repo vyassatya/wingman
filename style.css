@@ -533,6 +533,10 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
 .invest-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 8rem; padding: 1.25rem; background: var(--ink); color: #fff; }
 .invest-name { font: 600 1.35rem/1.2 var(--serif); }
 .invest-line { margin-top: 1.5rem; font-size: 0.9rem; color: #cfc9ba; }
+.invest-card-word { justify-content: center; }
+.invest-star { font-size: 0.7em; vertical-align: super; margin-left: 0.1em; }
+.invest-group { margin-top: 2.5rem; }
+.invest-note { margin: 1.25rem 0 0; font-size: 0.8rem; color: var(--mute); }
 
 
 .about-block { padding: 3rem 0 2.5rem; border-top: 1px solid var(--rule); }
