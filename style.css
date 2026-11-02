@@ -538,7 +538,6 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
 .invest-logo { display: block; width: 100%; height: 3rem; object-fit: contain; }
 .invest-card-logo .invest-name { font-size: 0.9rem; }
 .invest-star { font-size: 0.7em; vertical-align: super; margin-left: 0.1em; }
-.invest-group { margin-top: 2.5rem; }
 .invest-note { margin: 1.25rem 0 0; font-size: 0.8rem; color: var(--mute); }
 
 
