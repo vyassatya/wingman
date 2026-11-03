@@ -353,14 +353,14 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
   .topbar .btn { margin-left: 0; }
 }
 
-.fold .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 3rem; align-items: end; }
-.fold-copy { align-self: end; padding: 2.5rem 0 0.6rem; text-align: center; }
+.fold .wrap { display: grid; grid-template-columns: minmax(0, 38rem) auto; justify-content: center; column-gap: 4rem; align-items: stretch; padding-top: 2.5rem; }
+.fold-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; padding: 0 0 0.6rem; text-align: center; }
 .fold-copy h1 { margin: 0 auto; max-width: 16ch; font-size: clamp(2.3rem, 4.8vw, 4.1rem); line-height: 1.04; letter-spacing: 0.005em; text-transform: uppercase; }
 .fold-copy .sub { max-width: 32rem; margin: 1.5rem auto 0; }
 .fold-copy > p:nth-of-type(2) { margin: 2rem 0 0; }
-.fold-photo { display: block; grid-column: 2; grid-row: 1; }
+.fold-photo { display: block; grid-column: 2; grid-row: 1; align-self: end; }
 .fold-copy { grid-column: 1; grid-row: 1; }
-.fold-photo img { display: block; width: auto; height: clamp(300px, 34vw, 440px); }
+.fold-photo img { display: block; width: auto; height: clamp(300px, calc(300px + 19vw), 560px); }
 
 .stats-bar { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
 .stat-list { list-style: none; margin: 0; padding: 2rem 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
@@ -383,8 +383,8 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
 .guides-copy p:last-child { margin: 0; }
 
 @media (max-width: 720px) {
-  .fold .wrap { grid-template-columns: 1fr; }
-  .fold-photo { grid-column: 1; grid-row: 1; justify-self: center; padding-top: 1.5rem; }
+  .fold .wrap { grid-template-columns: 1fr; padding-top: 0; }
+  .fold-photo { grid-column: 1; grid-row: 1; justify-self: center; align-self: auto; padding-top: 1.5rem; }
   .fold-copy { grid-column: 1; grid-row: 2; }
   .fold-photo img { height: 300px; }
   .fold-copy { padding: 2rem 0 3rem; }
