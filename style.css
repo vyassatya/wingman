@@ -24,12 +24,18 @@ body {
 }
 
 .col {
-  max-width: 680px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-.col-wide { max-width: 1040px; }
+/* One content width for every page; running text keeps a readable measure inside it, left-aligned with the headings. */
+.col .page-head > p, .col .page-head > ul, .col .page-head [data-plan] > p, .col .page-head [data-plan] > ul,
+.col .section > p, .col .section > ul, .col .section > ol, .col .section > blockquote, .col .section > form,
+.col .section > .cta-block, .guide-text > p, .guide-text > ul, .guide-text > ol, .guide-text > h2, .guide-text > h3, .guide-text > h4, .guide-text > h5, .guide-text > h6,
+.guide-list li p, .guide-head .get-pdf, .gr-landing, .gr-app { max-width: 46rem; }
+.col .section > form { max-width: 680px; }
+.gr-landing, .gr-app { max-width: 680px; }
 
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
 a:hover { text-decoration-thickness: 2px; }
@@ -353,14 +359,14 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
   .topbar .btn { margin-left: 0; }
 }
 
-.fold .wrap { display: grid; grid-template-columns: minmax(0, 38rem) auto; justify-content: center; column-gap: 4rem; align-items: stretch; padding-top: 2.5rem; }
+.fold .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 5rem; align-items: stretch; padding-top: 4rem; }
 .fold-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; padding: 0 0 0.6rem; text-align: center; }
-.fold-copy h1 { margin: 0 auto; max-width: 16ch; font-size: clamp(2.3rem, 4.8vw, 4.1rem); line-height: 1.04; letter-spacing: 0.005em; text-transform: uppercase; }
+.fold-copy h1 { margin: 0 auto; max-width: 22ch; font-size: clamp(2.3rem, 4.8vw, 4.1rem); line-height: 1.04; letter-spacing: 0.005em; text-transform: uppercase; }
 .fold-copy .sub { max-width: 32rem; margin: 1.5rem auto 0; }
 .fold-copy > p:nth-of-type(2) { margin: 2rem 0 0; }
 .fold-photo { display: block; grid-column: 2; grid-row: 1; align-self: end; }
 .fold-copy { grid-column: 1; grid-row: 1; }
-.fold-photo img { display: block; width: auto; height: clamp(300px, calc(300px + 19vw), 560px); }
+.fold-photo img { display: block; width: auto; height: clamp(300px, 32vw, 460px); }
 
 .stats-bar { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
 .stat-list { list-style: none; margin: 0; padding: 2rem 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
@@ -383,11 +389,11 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
 .guides-copy p:last-child { margin: 0; }
 
 @media (max-width: 720px) {
-  .fold .wrap { grid-template-columns: 1fr; padding-top: 0; }
+  .fold .wrap { grid-template-columns: 1fr; padding-top: 2.5rem; }
   .fold-photo { grid-column: 1; grid-row: 1; justify-self: center; align-self: auto; padding-top: 1.5rem; }
   .fold-copy { grid-column: 1; grid-row: 2; }
   .fold-photo img { height: 300px; }
-  .fold-copy { padding: 2rem 0 3rem; }
+  .fold-copy { padding: 2rem 0 3.5rem; }
   .stat-list { grid-template-columns: repeat(2, 1fr); padding: 1.5rem 0; }
   .guides-grid { grid-template-columns: 1fr; padding-top: 2rem; padding-bottom: 2.5rem; }
   .fan { --w: 95px; }
@@ -507,7 +513,7 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
 
 /* Homepage: trust blocks */
 
-.featured { padding: 3.5rem 0; border-top: 1px solid var(--ink); }
+section.featured { padding: 3.5rem 0; border-top: 1px solid var(--ink); }
 .featured-label { margin: 0 0 1.75rem; text-align: center; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8a8a8a; }
 .featured-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem 3rem; list-style: none; margin: 0; padding: 0; }
 .featured-row li { font-size: 1.3rem; line-height: 1; font-weight: 700; color: #8a8a8a; white-space: nowrap; }
@@ -555,6 +561,7 @@ blockquote footer { font-size: 0.85rem; color: var(--mute); }
   .invest-grid { grid-template-columns: repeat(2, 1fr); }
   .about-cols { grid-template-columns: 1fr; }
 }
+.findme-legal { margin: 2.5rem 0 0; padding-top: 1.25rem; border-top: 1px solid #3a3a3a; font-size: 0.85rem; color: #cfc9ba; }
 .findme-list a .findme-tag { text-transform: none; letter-spacing: 0; font-size: 0.9rem; }
 
 .invest-page { padding-top: 2.5rem; }
