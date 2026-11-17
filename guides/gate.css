@@ -4,7 +4,5 @@
 .gate-panel h2 { margin: 0 0 0.5rem; font-size: 1.5rem; }
 .gate-panel > p { margin: 0 0 1.25rem; color: var(--mute); }
 .gate-slot { min-height: 3.5rem; }
-.gate-skip { margin: 1.25rem 0 0; font-size: 0.9rem; color: var(--mute); }
-.gate-skip button { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 0.2em; cursor: pointer; }
-.get-pdf .eyebrow a { color: inherit; }
+.get-pdf .eyebrow .btn { text-transform: none; letter-spacing: normal; }
 .gate-pdf { margin: 1rem 0 0; }

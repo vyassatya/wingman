@@ -60,12 +60,10 @@ var GATE_ENABLED = true;
   panel.setAttribute("aria-labelledby", "gate-h");
   panel.innerHTML = '<h2 id="gate-h">Read the full report</h2>' +
     '<p>Enter your email to unlock the rest. It is free.</p>' +
-    '<div class="gate-slot"></div>' +
-    '<p class="gate-skip">Already subscribed, or the form is not showing? <button type="button">Show the report</button></p>';
+    '<div class="gate-slot"></div>';
   marker.parentNode.insertBefore(panel, marker.nextSibling);
 
   var slot = panel.querySelector(".gate-slot");
-  var skip = panel.querySelector(".gate-skip button");
 
   /* The embed moves into the gate; a placeholder keeps its original spot. */
   var spot = document.createComment("gate-embed");
@@ -75,7 +73,7 @@ var GATE_ENABLED = true;
   /* "Get the PDF" near the title scrolls to the gate while locked. */
   var jump = null;
   if (eyebrow) {
-    eyebrow.innerHTML = '<a href="#gate">Get the PDF</a>';
+    eyebrow.innerHTML = '<a class="btn" href="#gate">Get the PDF</a>';
     jump = eyebrow.firstChild;
     jump.onclick = function (e) {
       if (e && e.preventDefault) { e.preventDefault(); }
@@ -114,8 +112,6 @@ var GATE_ENABLED = true;
     if (/success|subscribed|submitted|thank|complete/i.test(text)) { unlock(true); }
   }
   if (window.addEventListener) { window.addEventListener("message", onMessage, false); }
-
-  skip.onclick = function () { unlock(true); };
 
   /* Fail open: if the form script is blocked or the form never renders, nobody stays gated. */
   var tag = embed.querySelector("script");
