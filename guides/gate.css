@@ -6,3 +6,15 @@
 .gate-slot { min-height: 3.5rem; }
 .get-pdf .eyebrow .btn { text-transform: none; letter-spacing: normal; }
 .gate-pdf { margin: 1rem 0 0; }
+
+/* Narrow screens: the Beehiiv form is built for a wider box and squeezes its email field here. Give it more room: a tighter panel, and the form laid out wider then scaled to fit. */
+.gate-slot iframe { color-scheme: light; }
+@media (max-width: 640px) {
+  .gate-panel { padding: 1.25rem 1rem; }
+  .gate-slot { margin: 0 -0.75rem; }
+}
+@supports (zoom: 1) {
+  @media (max-width: 640px) {
+    .gate-slot iframe { zoom: 0.8; width: 125% !important; }
+  }
+}
