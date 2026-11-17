@@ -11,10 +11,10 @@
 .gate-slot iframe { color-scheme: light; }
 @media (max-width: 640px) {
   .gate-panel { padding: 1.25rem 1rem; }
-  .gate-slot { margin: 0 -0.75rem; }
+  .gate-slot { margin: 0 calc(50% - 50vw); }
 }
 @supports (zoom: 1) {
   @media (max-width: 640px) {
-    .gate-slot iframe { zoom: 0.8; width: 125% !important; }
+    .gate-slot iframe { zoom: 0.7; width: calc(100% / 0.7) !important; }
   }
 }
