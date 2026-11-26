@@ -34,6 +34,7 @@
           '<a href="' + base + 'guides.html"' + cur("guides") + '>Free Resources</a>' +
           '<a href="' + base + 'work.html#talk">Talk to Me</a>' +
           '<a href="' + base + 'about.html"' + cur("about") + '>About</a>' +
+          '<a href="' + base + 'careers.html"' + cur("careers") + '>Careers</a>' +
           '<a href="' + base + 'investments.html"' + cur("investments") + '>My investments</a>' +
           '<span class="topbar-soon">Invest with me <small>Soon</small></span>' +
         '</nav>' +
